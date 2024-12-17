@@ -28,7 +28,7 @@ function HomePage() {
         <div className='mt-[50px] md:mt-0 '>
         
           <Image 
-            src="/foodpic1.jpeg" 
+            src="/food.png" 
             alt='Food Image 1'
             width={700}
             height={500}
