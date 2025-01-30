@@ -3,7 +3,6 @@ import Hero from "./Hero"
 import ChefGrid from "./ChefGrid"
 import Image from "next/image"
 
-// Image paths updated
 const chef1 = "/Chef1.png";
 const chef2 = "/chef2.png";
 const chef3 = "/Cart3.png";
@@ -26,11 +25,11 @@ const OurChefs = () => {
         </div>
 
         <div className="flex flex-col md:flex-row justify-center items-center gap-[20px] mt-[50px]">
-          {/* Updated image paths */}
-          <Image src={chef1} alt="Chef 1" className="w-[200px] md:w-[305px] md:h-[280px] cursor-pointer" />
-          <Image src={chef2} alt="Chef 2" className="w-[200px] md:w-[280px] md:h-[280px] cursor-pointer" />
-          <Image src={chef3} alt="Chef 3" className="w-[200px] md:w-[280px] md:h-[280px] cursor-pointer" />
-          <Image src={chef4} alt="Chef 4" className="w-[200px] md:w-[280px] md:h-[280px] cursor-pointer" />
+
+          <Image src={chef1} alt="Chef 1" width={200} height={280} className="w-[200px] md:w-[305px] md:h-[280px] cursor-pointer" />
+          <Image src={chef2} alt="Chef 2" width={200} height={280} className="w-[200px] md:w-[280px] md:h-[280px] cursor-pointer" />
+          <Image src={chef3} alt="Chef 3" width={200} height={280} className="w-[200px] md:w-[280px] md:h-[280px] cursor-pointer" />
+          <Image src={chef4} alt="Chef 4" width={200} height={280} className="w-[200px] md:w-[280px] md:h-[280px] cursor-pointer" />
         </div>
       </section>
     </div>

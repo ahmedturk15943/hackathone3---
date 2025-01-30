@@ -2,15 +2,13 @@ import Link from "next/link";
 import Hero from "./Hero"
 import React from "react"
 import Image from "next/image"
-//import google from "../../../public/google.png"//
-//import apple from "../../../public/apple.png"//
 
 export default function SignUpPage() {
   return (
     <>
     <Hero />
 
-      <div className="min-h-screen bg-white">  
+      <div className="min-h-screen bg-black">  
 
       <section className="py-16">
         <div className="container mx-auto max-w-md bg-white shadow-lg rounded-md p-8">

@@ -7,7 +7,7 @@ function HomePage() {
   return (
     <>
       <section className='bg-black px-3 md:px-[135px] flex flex-col justify-evenly md:flex-row  md:items-center py-[50px]'>
-        {/* Heading */}
+
         <div className='text-white w-full md:w-[50%]'>
           <h1 className='md:text-[32px] text-[24px] font-normal text-[#FF9F0D] font whitespace-nowrap'>
             Its Quick & Amusing!

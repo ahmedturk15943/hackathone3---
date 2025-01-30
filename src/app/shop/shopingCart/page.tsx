@@ -1,6 +1,8 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
+import ProductCards from '@/app/Products/page';
+
 
 const initialCartItems = [
   { name: "Burger", price: 10.99, quantity: 2, image: "/cart1.png" },
@@ -109,7 +111,7 @@ const ShoppingCart: React.FC = () => {
           </div>
 
           <div className="w-full lg:w-1/3">
-            <div className="bg-gray-100 p-6 rounded-lg">
+            <div className="bg-white p-6 rounded-lg">
               <div className="flex justify-between mb-4">
                 <span>Cart Subtotal</span>
                 <span>${cartSubtotal.toFixed(2)}</span>
@@ -133,6 +135,8 @@ const ShoppingCart: React.FC = () => {
           </div>
         </div>
       </main>
+      <ProductCards/>
+
     </div>
   );
 };

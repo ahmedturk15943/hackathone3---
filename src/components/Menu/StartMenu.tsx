@@ -5,8 +5,8 @@ import Image from 'next/image';
 
 export default function StarterMenu() {
   return (
-    <section className="w-full mx-auto mt-[120px] px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto py-16 flex flex-col lg:flex-row gap-12">
+    <section className="w-full mx-auto mt-[120px] px-4 sm:px-6 lg:px-8 ">
+      <div className="container mx-auto py-16 flex flex-col lg:flex-row gap-12 ">
         <div className="w-full lg:w-[448px] mb-8 lg:mb-0">
           <Image 
             src="/menu.png" 

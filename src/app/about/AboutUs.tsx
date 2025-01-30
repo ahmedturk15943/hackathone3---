@@ -1,13 +1,12 @@
 import Image from "next/image";
 import { IoPlayOutline } from "react-icons/io5";
 
-
 export default function Aboutus() {
   return (
     <div>
 
       <section className="bg-black body-font">
-        <div className="container mx-auto flex px-5 py-24">
+        <div className="container mx-auto flex px-5 py-24 ">
           <div className="flex flex-col md:flex-row items-center md:space-x-4 mt-2 ml-2 ">
             <Image
               className="object-cover object-center w-336px h-536px mt-530px ml-300px radius-6px"
@@ -15,7 +14,7 @@ export default function Aboutus() {
               src= "/unsplash_lP5MCM6nZ5A.png" width={309} height={536} 
             />
           </div>
-
+          
           <div className="flex flex-col space-y-2 space-x-2 mt-2 ml-2">
             <Image
               className="object-cover object-center w-309px h-271px mt-584px ml-660px radius-6px"

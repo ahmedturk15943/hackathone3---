@@ -3,8 +3,6 @@ import Image from 'next/image'
 import { FaCheck } from 'react-icons/fa6'
 import FoodCategory from '../foodcatagery/page'
 
-
-
 function Hero() {
   return (
     <>
