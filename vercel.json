@@ -1,8 +1,9 @@
-
 {
-  "functions": {
-    "middleware.js": {
-      "runtime": "nodejs18.x"
+  "version": 2,
+  "builds": [
+    {
+      "src": "next.config.js",
+      "use": "@vercel/next"
     }
-  }
+  ]
 }
