@@ -12,7 +12,7 @@ function Hero() {
           <div className='text-base sm:text-lg md:text-xl flex gap-2 text-center justify-center'>
             <Link href="/" className='text-white hover:text-[#FF9F0D] transition-colors duration-300'>
               Home
-            </Link>
+            </Link> 
             <span className='text-white'>/</span>
             <Link href="/pages" className='text-[#FF9F0D]'>
               Pages
