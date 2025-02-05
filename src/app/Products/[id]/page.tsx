@@ -1,6 +1,7 @@
+
 // 'use client';
 
-// import { useEffect, useState } from 'react';
+// import { useEffect, useState, useCallback } from 'react';
 // import { useParams, useRouter } from 'next/navigation';
 // import { client } from '@/sanity/lib/client';
 // import Image from 'next/image';
@@ -24,7 +25,8 @@
 
 //   const id = params?.id;
 
-//   const fetchProductDetail = async () => {
+//   // Memoize fetchProductDetail to prevent unnecessary re-creation of the function
+//   const fetchProductDetail = useCallback(async () => {
 //     if (!id) return;
 
 //     try {
@@ -46,11 +48,11 @@
 //     } catch (error) {
 //       console.error("Error fetching product details:", error);
 //     }
-//   };
+//   }, [id]);
 
 //   useEffect(() => {
 //     fetchProductDetail();
-//   }, [id]); 
+//   }, [fetchProductDetail]); // Use memoized fetchProductDetail function as a dependency
 
 //   const handleAddToCart = () => {
 //     const currentCart = JSON.parse(localStorage.getItem('cart') || '[]');
@@ -120,7 +122,7 @@
 //   );
 // };
 
-// export default ProductDetail;
+// export default ProductDetail; pag ni khul ra
 
 
 
@@ -133,12 +135,18 @@
 
 
 
-'use client';
+
+
+
+
+
+
 
 import { useEffect, useState, useCallback } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { client } from '@/sanity/lib/client';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface FoodItem {
   _id: string;
@@ -159,24 +167,21 @@ const ProductDetail: React.FC = () => {
 
   const id = params?.id;
 
-  // Memoize fetchProductDetail to prevent unnecessary re-creation of the function
   const fetchProductDetail = useCallback(async () => {
     if (!id) return;
 
     try {
-      const query = `
-        *[_type == "food" && _id == $id][0] {
-          _id,
-          name,
-          description,
-          price,
-          originalPrice,
-          category,
-          available,
-          tags,
-          "imageUrl": image.asset->url
-        }
-      `;
+      const query = `*[_type == "food" && _id == $id][0] {
+        _id,
+        name,
+        description,
+        price,
+        originalPrice,
+        category,
+        available,
+        tags,
+        "imageUrl": image.asset->url
+      }`;
       const data = await client.fetch(query, { id });
       setProduct(data);
     } catch (error) {
@@ -186,7 +191,7 @@ const ProductDetail: React.FC = () => {
 
   useEffect(() => {
     fetchProductDetail();
-  }, [fetchProductDetail]); // Use memoized fetchProductDetail function as a dependency
+  }, [fetchProductDetail]);
 
   const handleAddToCart = () => {
     const currentCart = JSON.parse(localStorage.getItem('cart') || '[]');
@@ -214,8 +219,15 @@ const ProductDetail: React.FC = () => {
 
   return (
     <div className="p-4 sm:p-8">
+      {/* Products Header */}
       <h1 className="text-4xl font-bold text-center mt-16 mb-8 text-black">Product Detail</h1>
+      
+      {/* Link to go back to Products list */}
+      <Link href="/Products" className="text-blue-500 hover:underline mb-4 inline-block">
+        Back to Products
+      </Link>
 
+      {/* Product Detail Section */}
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 space-y-8 sm:flex sm:space-y-0 sm:space-x-6">
         {/* Product Image */}
         {product.imageUrl && (
@@ -230,7 +242,7 @@ const ProductDetail: React.FC = () => {
           </div>
         )}
 
-        {/* Product Information */}
+        {/* Product Info */}
         <div className="space-y-4 sm:w-2/3">
           <h2 className="text-3xl font-bold text-gray-800">{product.name}</h2>
           <p className="text-gray-700 leading-relaxed">{product.description}</p>
@@ -257,3 +269,4 @@ const ProductDetail: React.FC = () => {
 };
 
 export default ProductDetail;
+
