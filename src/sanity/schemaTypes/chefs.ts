@@ -88,7 +88,7 @@ const chefSchema = {
     },
     {
       name: 'description',
-      type: 'text',
+      type: 'text', 
       title: 'Description',
       description: 'Short bio or introduction about the chef',
     },
