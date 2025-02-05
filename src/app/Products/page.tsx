@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 'use client';
-=======
-// 'use client';
->>>>>>> <commit hash>
-
 
 import React, { useEffect, useState } from "react";
 import { client } from "@/sanity/lib/client";
