@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
-import ProductCards from '@/app/products/[id]/page';
+import ProductCards from '@/app/products/page';
 // import ProductCards from '@/app/products/ProductCards';
 // import ProductCards from '@/app/products/page';
 // import ProductsPage from '../../products/page';
