@@ -52,7 +52,7 @@ const ProductList: React.FC = () => {
       <h1 className="text-center text-white text-2xl font-bold mb-6">Product List</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map((product) => (
-          <Link href={`/Products/${product._id}`} key={product._id}>
+          <Link href={`/products/${product._id}`} key={product._id}>
             <div className="border rounded-lg shadow-lg p-4 hover:shadow-2xl transition-all cursor-pointer">
               {product.imageUrl && (
                 <Image
@@ -63,7 +63,7 @@ const ProductList: React.FC = () => {
                   className="rounded-lg w-full h-40 object-cover"
                 />
               )}
-              <h3 className="mt-4 text-lg font-semibold">{product.name}</h3>
+              <h3 className="mt-4 text-lg text-white font-semibold">{product.name}</h3>
               <p className="text-white text-sm">{product.description}</p>
               <p className="text-white text-xs">Category: {product.category}</p>
               <p className="mt-2 text-gray-200 font-bold">
@@ -74,7 +74,7 @@ const ProductList: React.FC = () => {
                   </span>
                 )}
               </p>
-              <p className="mt-1 text-sm">
+              <p className="mt-1 text-sm text-white">
                 {product.available ? "Available" : "Out of Stock"}
               </p>
               <div className="mt-2">

@@ -20,7 +20,7 @@ export default function Navbar() {
     { name: "About", href: "/about", active: activeLink === "/about" },
     { name: "Shop", href: "/shop", active: activeLink === "/shop" },
     { name: "Chef", href: "/ourChefs", active: activeLink === "/ourChefs" },
-    { name: "Foods", href: "/Products", active: activeLink === "/Products" },
+    { name: "Foods", href: "/products", active: activeLink === "/products" },
 
 
     { name: "Contact", href: "/contact", active: activeLink === "/contact" },

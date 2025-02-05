@@ -78,7 +78,7 @@ const CartPage = () => {
   className="rounded-lg object-cover"
 />
                 <div>
-                  <h2 className="text-lg font-semibold">{item.name}</h2>
+                  <h2 className="text-lg font-semibold text-white">{item.name}</h2>
                   <p className="text-sm text-white">${item.price.toFixed(2)}</p>
                 </div>
               </div>
@@ -111,7 +111,7 @@ const CartPage = () => {
           ))}
 
           <div className="mt-6 p-4 bg-black rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
+            <h2 className="text-xl font-semibold mb-4 text-amber-600">Order Summary</h2>
             <p className="text-white">Total Price: ${totalPrice.toFixed(2)}</p>
             <button
               onClick={handleCheckout}
